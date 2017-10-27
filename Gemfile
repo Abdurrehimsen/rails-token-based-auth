@@ -22,6 +22,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'jwt'
 
+gem 'rack-cors'
+
 gem 'simple_command'
 
 # Use Capistrano for deployment
