@@ -1,7 +1,7 @@
 angular.module('angularrails')
-.factory('users', ['$http', function($http){
+.factory('users', ['$http', '$location', function($http, $location){
   var o = {
-    users: []
+    items: ""
   };
   o.auth = function(email, password) {
     var Indata = {"email":email, "password": password}
@@ -9,9 +9,20 @@ angular.module('angularrails')
         method: "POST",
         params: Indata}).then(
   			function(data){
-          console.log(data.data)
-		      	angular.copy(data.data, o.users);
+         	window.localStorage.token = data.data.auth_token;
+          $location.path('/userpage');
+          console.log(window.localStorage.token);
 		    });
   	};
+
+    o.getItems = function(){
+      return $http({
+      method: 'GET', 
+      url: 'https://localhost:3000/items',
+      headers:{
+          'Authorization': window.localStorage.token
+      }
+      });
+    }
   return o;
 }]);

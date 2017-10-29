@@ -1,0 +1,12 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2>User</h2>
+    <button type="submit" ng-click="showItems()" class="btn btn-primary">Items</button>
+
+    <div ng-repeat="post in posts">
+        <span>
+            {{post.name}} </span>
+        <span style="font-size:20px; margin-left:10px;">
+            {{post.description}}
+        </span>
+      </div>
+</div>
