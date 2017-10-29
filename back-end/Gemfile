@@ -24,6 +24,8 @@ gem 'jwt'
 
 gem 'rack-cors'
 
+gem 'thin'
+
 gem 'simple_command'
 
 # Use Capistrano for deployment

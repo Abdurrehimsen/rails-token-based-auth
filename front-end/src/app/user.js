@@ -5,7 +5,7 @@ angular.module('angularrails')
   };
   o.auth = function(email, password) {
     var Indata = {"email":email, "password": password}
-  		return $http({url: "http://localhost:3000/authenticate",
+  		return $http({url: "https://localhost:3000/authenticate",
         method: "POST",
         params: Indata}).then(
   			function(data){
